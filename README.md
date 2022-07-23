@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #  northwoods-babysitter-kata-vue
 
 This template should help get you started developing with Vue 3 in Vite.
@@ -57,3 +58,6 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```sh
 npm run lint
 ```
+=======
+# northwoods-babysitter-kata-vue
+>>>>>>> ad8f62de0ac7ec5ed76788629e887eb79dcba041
