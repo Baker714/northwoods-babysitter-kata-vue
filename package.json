@@ -1,5 +1,5 @@
 {
-  "name": " northwoods-babysitter-kata-vue",
+  "name": "northwoods-babysitter-kata-vue",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
