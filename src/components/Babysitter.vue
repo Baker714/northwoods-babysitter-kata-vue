@@ -32,7 +32,6 @@ function calculatePay() {
   if (!validateData(startHour, endHour, bedTimePresent, bedHour)) return;
 
   if (bedTimePresent && midnight > bedHour) {
-    console.log(startTimeVal.value, bedTimeVal.value, endTimeVal.value);
 
     if(endHour < midnight)
         pay.value =
