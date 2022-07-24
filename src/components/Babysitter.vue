@@ -61,6 +61,8 @@ function calculatePay() {
         {
             startHour++;
         }
+
+        pay.value = ((bedHour-startHour) * startBedPay) + ((midnight - bedHour) * bedMidnightPay) + ((endHour - midnight) * midnightEndPay)
     }
     else
     {
@@ -68,6 +70,8 @@ function calculatePay() {
         {
             startHour++;
         }
+
+        pay.value = ((midnight-startHour) * startBedPay) + ((endHour - midnight) * midnightEndPay)
     }
 
 }
