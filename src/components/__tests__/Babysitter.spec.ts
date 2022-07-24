@@ -27,7 +27,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("04:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).toBe("$ 64");
+    expect(wrapper.find("#payField").element.innerHTML).toBe("$ 64.00");
   });
 
   test("End time cant be after 4:00 a.m. or before 5:00 p.m.", async () => {
@@ -69,7 +69,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("04:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).equals("$ 132");
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 132.00");
   });
 
   test("5 p.m. to 4 a.m., no bedtime set", async () => {
@@ -78,7 +78,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("04:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).equals("$ 148");
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 148.00");
   });
 
   test("5 p.m. to 6 p.m.", async () => {
@@ -87,7 +87,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("18:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).toBe("$ 12");
+    expect(wrapper.find("#payField").element.innerHTML).toBe("$ 12.00");
   });
 
   test("12 a.m. to 2 a.m., 1 a.m. bedtime", async () => {
@@ -96,7 +96,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("02:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).equals("$ 32");
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 32.00");
   });
 
   test("8 p.m. to 10 p.m., 9 p.m. bedtime", async () => {
@@ -105,7 +105,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("22:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).equals("$ 20");
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 20.00");
   });
 
   test("8 p.m. to 2 a.m., 12 a.m. bedtime", async () => {
@@ -114,7 +114,7 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("02:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).equals("$ 80");
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 80.00");
   });
 
   test("8 p.m. to 12 a.m., 10 a.m. bedtime", async () => {
@@ -123,6 +123,15 @@ describe("Babysitter", () => {
     await endTimeInput.setValue("00:00");
     await wrapper.find("#calcPayBtn").trigger("click");
 
-    expect(wrapper.find("#payField").element.innerHTML).equals("$ 40");
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 40.00");
+  });
+
+  test("5 p.m. to 1 a.m., 5 a.m. bedtime", async () => {
+    await startTimeInput.setValue("17:00");
+    await bedTimeInput.setValue("17:00");
+    await endTimeInput.setValue("01:00");
+    await wrapper.find("#calcPayBtn").trigger("click");
+
+    expect(wrapper.find("#payField").element.innerHTML).equals("$ 72.00");
   });
 });

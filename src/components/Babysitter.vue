@@ -32,7 +32,6 @@ function calculatePay() {
   if (!validateData(startHour, endHour, bedTimePresent, bedHour)) return;
 
   if (bedTimePresent && midnight > bedHour) {
-
     if(endHour < midnight)
         pay.value =
             (bedHour - startHour) * startBedPay +
@@ -122,7 +121,7 @@ function validateData(
       </button>
       <br />
       <br />
-      <h1 id="payField">$ {{ pay }}</h1>
+      <h1 id="payField">$ {{ pay }}.00</h1>
     </form>
   </main>
 </template>
