@@ -57,8 +57,3 @@ npm run test:e2e # or `npm run test:e2e:ci` for headless testing
 ```sh
 npm run lint
 ```
-<<<<<<< HEAD
-=======
-=======
-# northwoods-babysitter-kata-vue
->>>>>>> 70ad617e3f8f56a456d4de22d0c1f0204ee79a45
